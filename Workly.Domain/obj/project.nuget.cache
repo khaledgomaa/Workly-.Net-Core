@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Q9u4d2O9t7WOGwOxneqkg/7W/hdWn3TEO9zYeKCtCDHAE3wYimzoR6UWvHXgwBa+74Rxa275fVeYsqPYqdREIA==",
+  "dgSpecHash": "wmdY/unqlobyrUk2WsACWDuyxCjU5WDTJnkr1XgEv2Fe2gn6gU7SP6mB96uvfwoltjFglQIbOAGenBVj+K33Wg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\KhaledGomaa\\source\\repos\\Workly\\Workly.Domain\\Workly.Domain.csproj",
+  "projectFilePath": "E:\\Courses\\Workly in asp.net core\\Workly-.Net-Core\\Workly.Domain\\Workly.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

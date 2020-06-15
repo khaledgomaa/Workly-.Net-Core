@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Workly.Repository\Workly.Repository.csproj" />
+    <ProjectReference Include="..\Workly.Service\Workly.Service.csproj" />
   </ItemGroup>
 
 

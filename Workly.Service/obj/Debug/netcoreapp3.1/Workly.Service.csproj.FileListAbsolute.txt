@@ -7,3 +7,17 @@ C:\Users\KhaledGomaa\source\repos\Workly\Workly.Service\obj\Debug\netcoreapp3.1\
 C:\Users\KhaledGomaa\source\repos\Workly\Workly.Service\obj\Debug\netcoreapp3.1\Workly.Service.csproj.CoreCompileInputs.cache
 C:\Users\KhaledGomaa\source\repos\Workly\Workly.Service\obj\Debug\netcoreapp3.1\Workly.Service.dll
 C:\Users\KhaledGomaa\source\repos\Workly\Workly.Service\obj\Debug\netcoreapp3.1\Workly.Service.pdb
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Service\bin\Debug\netcoreapp3.1\Workly.Service.deps.json
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Service\bin\Debug\netcoreapp3.1\Workly.Service.dll
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Service\bin\Debug\netcoreapp3.1\Workly.Service.pdb
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Service\bin\Debug\netcoreapp3.1\Workly.Domain.dll
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Service\bin\Debug\netcoreapp3.1\Workly.Repository.dll
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Service\bin\Debug\netcoreapp3.1\Workly.Repository.pdb
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Service\bin\Debug\netcoreapp3.1\Workly.Domain.pdb
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Service\obj\Debug\netcoreapp3.1\Workly.Service.csprojAssemblyReference.cache
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Service\obj\Debug\netcoreapp3.1\Workly.Service.AssemblyInfoInputs.cache
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Service\obj\Debug\netcoreapp3.1\Workly.Service.AssemblyInfo.cs
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Service\obj\Debug\netcoreapp3.1\Workly.Service.csproj.CoreCompileInputs.cache
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Service\obj\Debug\netcoreapp3.1\Workly.Service.csproj.CopyComplete
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Service\obj\Debug\netcoreapp3.1\Workly.Service.dll
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Service\obj\Debug\netcoreapp3.1\Workly.Service.pdb

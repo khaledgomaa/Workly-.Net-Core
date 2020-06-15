@@ -26,6 +26,7 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Design": "3.1.5",
           "Workly.Repository": "1.0.0",
+          "Workly.Service": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -1285,6 +1286,17 @@
         },
         "compile": {
           "Workly.Repository.dll": {}
+        }
+      },
+      "Workly.Service/1.0.0": {
+        "dependencies": {
+          "Workly.Repository": "1.0.0"
+        },
+        "runtime": {
+          "Workly.Service.dll": {}
+        },
+        "compile": {
+          "Workly.Service.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -3481,6 +3493,11 @@
       "sha512": ""
     },
     "Workly.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Workly.Service/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

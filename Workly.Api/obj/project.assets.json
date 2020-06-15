@@ -1355,6 +1355,19 @@
         "runtime": {
           "bin/placeholder/Workly.Repository.dll": {}
         }
+      },
+      "Workly.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Workly.Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Workly.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Workly.Service.dll": {}
+        }
       }
     }
   },
@@ -5139,12 +5152,18 @@
       "type": "project",
       "path": "../Workly.Repository/Workly.Repository.csproj",
       "msbuildProject": "../Workly.Repository/Workly.Repository.csproj"
+    },
+    "Workly.Service/1.0.0": {
+      "type": "project",
+      "path": "../Workly.Service/Workly.Service.csproj",
+      "msbuildProject": "../Workly.Service/Workly.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.EntityFrameworkCore.Design >= 3.1.5",
-      "Workly.Repository >= 1.0.0"
+      "Workly.Repository >= 1.0.0",
+      "Workly.Service >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5153,11 +5172,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\KhaledGomaa\\source\\repos\\Workly\\Workly.Api\\Workly.Api.csproj",
+      "projectUniqueName": "E:\\Courses\\Workly in asp.net core\\Workly-.Net-Core\\Workly.Api\\Workly.Api.csproj",
       "projectName": "Workly.Api",
-      "projectPath": "C:\\Users\\KhaledGomaa\\source\\repos\\Workly\\Workly.Api\\Workly.Api.csproj",
+      "projectPath": "E:\\Courses\\Workly in asp.net core\\Workly-.Net-Core\\Workly.Api\\Workly.Api.csproj",
       "packagesPath": "C:\\Users\\KhaledGomaa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\KhaledGomaa\\source\\repos\\Workly\\Workly.Api\\obj\\",
+      "outputPath": "E:\\Courses\\Workly in asp.net core\\Workly-.Net-Core\\Workly.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\KhaledGomaa\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5173,8 +5192,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\KhaledGomaa\\source\\repos\\Workly\\Workly.Repository\\Workly.Repository.csproj": {
-              "projectPath": "C:\\Users\\KhaledGomaa\\source\\repos\\Workly\\Workly.Repository\\Workly.Repository.csproj"
+            "E:\\Courses\\Workly in asp.net core\\Workly-.Net-Core\\Workly.Repository\\Workly.Repository.csproj": {
+              "projectPath": "E:\\Courses\\Workly in asp.net core\\Workly-.Net-Core\\Workly.Repository\\Workly.Repository.csproj"
+            },
+            "E:\\Courses\\Workly in asp.net core\\Workly-.Net-Core\\Workly.Service\\Workly.Service.csproj": {
+              "projectPath": "E:\\Courses\\Workly in asp.net core\\Workly-.Net-Core\\Workly.Service\\Workly.Service.csproj"
             }
           }
         }

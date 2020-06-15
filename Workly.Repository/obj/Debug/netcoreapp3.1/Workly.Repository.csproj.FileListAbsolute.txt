@@ -13,3 +13,18 @@ C:\Users\KhaledGomaa\source\repos\Workly\Workly.Repository\bin\Debug\netcoreapp3
 C:\Users\KhaledGomaa\source\repos\Workly\Workly.Repository\bin\Debug\netcoreapp3.1\Workly.Domain.pdb
 C:\Users\KhaledGomaa\source\repos\Workly\Workly.Repository\obj\Debug\netcoreapp3.1\Workly.Repository.csproj.CoreCompileInputs.cache
 C:\Users\KhaledGomaa\source\repos\Workly\Workly.Repository\obj\Debug\netcoreapp3.1\Workly.Repository.csproj.CopyComplete
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Repository\bin\Debug\netcoreapp3.1\Workly.Repository.deps.json
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Repository\bin\Debug\netcoreapp3.1\Workly.Repository.runtimeconfig.json
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Repository\bin\Debug\netcoreapp3.1\Workly.Repository.runtimeconfig.dev.json
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Repository\bin\Debug\netcoreapp3.1\Workly.Repository.dll
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Repository\bin\Debug\netcoreapp3.1\Workly.Repository.pdb
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Repository\bin\Debug\netcoreapp3.1\Workly.Domain.dll
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Repository\bin\Debug\netcoreapp3.1\Workly.Domain.pdb
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Repository\obj\Debug\netcoreapp3.1\Workly.Repository.csprojAssemblyReference.cache
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Repository\obj\Debug\netcoreapp3.1\Workly.Repository.AssemblyInfoInputs.cache
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Repository\obj\Debug\netcoreapp3.1\Workly.Repository.AssemblyInfo.cs
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Repository\obj\Debug\netcoreapp3.1\Workly.Repository.csproj.CoreCompileInputs.cache
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Repository\obj\Debug\netcoreapp3.1\Workly.Repository.csproj.CopyComplete
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Repository\obj\Debug\netcoreapp3.1\Workly.Repository.dll
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Repository\obj\Debug\netcoreapp3.1\Workly.Repository.pdb
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Repository\obj\Debug\netcoreapp3.1\Workly.Repository.genruntimeconfig.cache
