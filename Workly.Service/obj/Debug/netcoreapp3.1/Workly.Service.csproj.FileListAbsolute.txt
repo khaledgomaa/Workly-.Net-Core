@@ -1,0 +1,9 @@
+C:\Users\KhaledGomaa\source\repos\Workly\Workly.Service\bin\Debug\netcoreapp3.1\Workly.Service.deps.json
+C:\Users\KhaledGomaa\source\repos\Workly\Workly.Service\bin\Debug\netcoreapp3.1\Workly.Service.dll
+C:\Users\KhaledGomaa\source\repos\Workly\Workly.Service\bin\Debug\netcoreapp3.1\Workly.Service.pdb
+C:\Users\KhaledGomaa\source\repos\Workly\Workly.Service\obj\Debug\netcoreapp3.1\Workly.Service.csprojAssemblyReference.cache
+C:\Users\KhaledGomaa\source\repos\Workly\Workly.Service\obj\Debug\netcoreapp3.1\Workly.Service.AssemblyInfoInputs.cache
+C:\Users\KhaledGomaa\source\repos\Workly\Workly.Service\obj\Debug\netcoreapp3.1\Workly.Service.AssemblyInfo.cs
+C:\Users\KhaledGomaa\source\repos\Workly\Workly.Service\obj\Debug\netcoreapp3.1\Workly.Service.csproj.CoreCompileInputs.cache
+C:\Users\KhaledGomaa\source\repos\Workly\Workly.Service\obj\Debug\netcoreapp3.1\Workly.Service.dll
+C:\Users\KhaledGomaa\source\repos\Workly\Workly.Service\obj\Debug\netcoreapp3.1\Workly.Service.pdb

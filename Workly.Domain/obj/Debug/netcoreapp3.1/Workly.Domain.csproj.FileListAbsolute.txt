@@ -1,0 +1,9 @@
+C:\Users\KhaledGomaa\source\repos\Workly\Workly.Domain\bin\Debug\netcoreapp3.1\Workly.Domain.deps.json
+C:\Users\KhaledGomaa\source\repos\Workly\Workly.Domain\bin\Debug\netcoreapp3.1\Workly.Domain.dll
+C:\Users\KhaledGomaa\source\repos\Workly\Workly.Domain\bin\Debug\netcoreapp3.1\Workly.Domain.pdb
+C:\Users\KhaledGomaa\source\repos\Workly\Workly.Domain\obj\Debug\netcoreapp3.1\Workly.Domain.csprojAssemblyReference.cache
+C:\Users\KhaledGomaa\source\repos\Workly\Workly.Domain\obj\Debug\netcoreapp3.1\Workly.Domain.AssemblyInfoInputs.cache
+C:\Users\KhaledGomaa\source\repos\Workly\Workly.Domain\obj\Debug\netcoreapp3.1\Workly.Domain.AssemblyInfo.cs
+C:\Users\KhaledGomaa\source\repos\Workly\Workly.Domain\obj\Debug\netcoreapp3.1\Workly.Domain.csproj.CoreCompileInputs.cache
+C:\Users\KhaledGomaa\source\repos\Workly\Workly.Domain\obj\Debug\netcoreapp3.1\Workly.Domain.dll
+C:\Users\KhaledGomaa\source\repos\Workly\Workly.Domain\obj\Debug\netcoreapp3.1\Workly.Domain.pdb
