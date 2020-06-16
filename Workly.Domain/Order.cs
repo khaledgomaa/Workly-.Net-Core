@@ -25,5 +25,7 @@ namespace Workly.Domain
         public DateTime Date { get; set; }
 
         public decimal AgentRate { get; set; }
+
+        public byte AgentAction { get; set; }
     }
 }

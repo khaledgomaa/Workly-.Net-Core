@@ -22,6 +22,7 @@ namespace Workly.Repository
 
         public DbSet<UserAddress> UsersAddress { get; set; }
 
+        public DbSet<Notification> Notifications { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
