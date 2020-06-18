@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using Workly.Repository.Interfaces;
 
-namespace Workly.Repository
+namespace Workly.Repository.Implementation
 {
     public class WorkerRepository<TEntity> : IRepository<TEntity> where TEntity : class
     {
@@ -60,11 +61,6 @@ namespace Workly.Repository
 
         #endregion
 
-
-        public void Complete()
-        {
-            dbContext.SaveChanges();
-        }
 
     }
 }

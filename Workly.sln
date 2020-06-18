@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workly.Api", "Workly.Api\Workly.Api.csproj", "{012625BE-D678-4292-8AB9-5A160237F02D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Workly.Api", "Workly.Api\Workly.Api.csproj", "{012625BE-D678-4292-8AB9-5A160237F02D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workly.Domain", "Workly.Domain\Workly.Domain.csproj", "{43B5780C-49C7-4786-AD6E-DBCD216ECA2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Workly.Domain", "Workly.Domain\Workly.Domain.csproj", "{43B5780C-49C7-4786-AD6E-DBCD216ECA2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workly.Repository", "Workly.Repository\Workly.Repository.csproj", "{A4CBC8B0-63E6-4BE9-A81C-D3D57DCB052B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Workly.Repository", "Workly.Repository\Workly.Repository.csproj", "{A4CBC8B0-63E6-4BE9-A81C-D3D57DCB052B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workly.Service", "Workly.Service\Workly.Service.csproj", "{566BAE74-195E-467E-9494-043B26B8C7F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Workly.Service", "Workly.Service\Workly.Service.csproj", "{566BAE74-195E-467E-9494-043B26B8C7F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

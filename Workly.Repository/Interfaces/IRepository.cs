@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace Workly.Repository
+namespace Workly.Repository.Interfaces
 {
     public interface IRepository<TEntity> where TEntity : class
     {
@@ -27,6 +27,5 @@ namespace Workly.Repository
 
             #endregion
 
-            public void Complete();
     }
 }

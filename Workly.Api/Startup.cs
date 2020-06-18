@@ -5,7 +5,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Workly.Domain;
 using Workly.Repository;
+using Workly.Repository.Implementation;
+using Workly.Repository.Interfaces;
 using Workly.Repository.Models;
 using Workly.Service.Implementation;
 using Workly.Service.Interfaces;
@@ -29,7 +32,10 @@ namespace Workly.Api
                 (options => options.UseSqlServer(Configuration.GetConnectionString("MyWorkerDbConnection")));
 
             services.AddScoped(typeof(IRepository<>), typeof(WorkerRepository<>));
+            services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddTransient<IUserManager, UserManager>();
+            services.AddTransient<IOrderManager, OrderManager>();
+            services.AddTransient<IUnitOfWork, GenericUnitOfWork>();
 
             services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {

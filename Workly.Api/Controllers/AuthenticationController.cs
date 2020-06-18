@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Workly.Domain;
 using Workly.Domain.ViewModels;
 using Workly.Repository;
+using Workly.Repository.Interfaces;
 using Workly.Repository.Models;
 using Workly.Service.Interfaces;
 
@@ -16,7 +17,7 @@ namespace Workly.Api.Controllers
 
         #region CTOR
 
-        private readonly IUserManager dbContextUser;
+        private IUserManager dbContextUser;
 
         private readonly IRepository<UserAddress> dbContextUserAddress;
 
@@ -42,8 +43,7 @@ namespace Workly.Api.Controllers
 
             registerationModel.UserInfo.UserAddress = registerationModel.Address;
 
-            dbContextUser.AddUser(registerationModel.UserInfo);
-            dbContextUserAddress.Add(registerationModel.Address);
+            dbContextUser.AddUser(registerationModel.UserInfo, registerationModel.Address);
 
             if (await AddUserToAspNetUsers(registerationModel.UserSecurity, registerationModel.UserInfo))
             {
