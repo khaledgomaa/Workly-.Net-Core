@@ -18,6 +18,7 @@ namespace Workly.Repository
         {
             this.dbContext = dbContext;
         }
+
         public WorkerRepository<User> UserRepository
         {
             get

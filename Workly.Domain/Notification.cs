@@ -13,6 +13,6 @@ namespace Workly.Domain
         public int orderId { get; set; }
         public Order Order { get; set; }
 
-        public byte status { get; set; }
+        public bool status { get; set; }
     }
 }
