@@ -21,5 +21,10 @@ namespace Workly.Domain
         [Required]
         public string ImagePath { get; set; }
 
+        [ForeignKey("ApplicationUser")]
+        [Required]
+        public string AspNetUsersId { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
+
     }
 }

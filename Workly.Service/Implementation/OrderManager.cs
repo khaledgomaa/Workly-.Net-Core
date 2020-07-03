@@ -27,10 +27,7 @@ namespace Workly.Service.Implementation
             throw new NotImplementedException();
         }
 
-        public void Complete()
-        {
-            throw new NotImplementedException();
-        }
+        public void Complete() => dbContext.Complete();
 
         public IEnumerable<Order> GetAll()
         {

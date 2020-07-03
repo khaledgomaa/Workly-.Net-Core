@@ -5,7 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.5" />
+    <Compile Remove="Migrations\20200629160102_updateAspNetUsersAddingUserAgent.cs" />
+    <Compile Remove="Migrations\20200629160102_updateAspNetUsersAddingUserAgent.Designer.cs" />
+    <Compile Remove="Migrations\20200702152603_droptableAgent.cs" />
+    <Compile Remove="Migrations\20200702152603_droptableAgent.Designer.cs" />
+    <Compile Remove="Migrations\20200702152955_UpdateIdentityToIdiNJobTable.cs" />
+    <Compile Remove="Migrations\20200702152955_UpdateIdentityToIdiNJobTable.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.5">
       <PrivateAssets>all</PrivateAssets>
@@ -15,6 +23,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Workly.Domain\Workly.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>

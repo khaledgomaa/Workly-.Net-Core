@@ -9,7 +9,6 @@ using Workly.Domain;
 using Workly.Repository;
 using Workly.Repository.Implementation;
 using Workly.Repository.Interfaces;
-using Workly.Repository.Models;
 using Workly.Service.Implementation;
 using Workly.Service.Interfaces;
 
@@ -36,6 +35,9 @@ namespace Workly.Api
             services.AddTransient<IUserManager, UserManager>();
             services.AddTransient<IOrderManager, OrderManager>();
             services.AddTransient<IUnitOfWork, GenericUnitOfWork>();
+            services.AddTransient<IAgentManager, AgentManager>();
+            services.AddTransient<IJobManager, JobManager>();
+            services.AddTransient<IAddressManager, AddressManager>();
 
             services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {

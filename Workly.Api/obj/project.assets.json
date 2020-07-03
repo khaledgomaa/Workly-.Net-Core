@@ -1334,6 +1334,9 @@
       "Workly.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.5"
+        },
         "compile": {
           "bin/placeholder/Workly.Domain.dll": {}
         },
@@ -1345,7 +1348,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.5",
           "Workly.Domain": "1.0.0"
         },

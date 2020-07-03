@@ -1268,6 +1268,9 @@
         }
       },
       "Workly.Domain/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.5"
+        },
         "runtime": {
           "Workly.Domain.dll": {}
         },
@@ -1277,7 +1280,6 @@
       },
       "Workly.Repository/1.0.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.5",
           "Workly.Domain": "1.0.0"
         },

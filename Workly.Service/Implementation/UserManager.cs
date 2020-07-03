@@ -10,7 +10,7 @@ namespace Workly.Service.Implementation
 {
     public class UserManager : IUserManager
     {
-        private IUnitOfWork dbContext;
+        private readonly IUnitOfWork dbContext;
 
         public UserManager(IUnitOfWork dbContext)
         {
@@ -19,7 +19,7 @@ namespace Workly.Service.Implementation
 
         public void Add(User entity)
         {
-            //dbContext.UserRepository.Add(entity);
+            dbContext.UserRepository.Add(entity);
         }
 
         //Add into user table and address
@@ -48,12 +48,12 @@ namespace Workly.Service.Implementation
 
         public User GetFirstOrDefault(int recordId)
         {
-            throw new NotImplementedException();
+            return dbContext.UserRepository.GetFirstOrDefault(recordId);
         }
 
         public User GetFirstOrDefaultByParam(Expression<Func<User, bool>> wherePredict)
         {
-            throw new NotImplementedException();
+            return dbContext.UserRepository.GetFirstOrDefaultByParam(wherePredict);
         }
 
         public void Remove(User entity)

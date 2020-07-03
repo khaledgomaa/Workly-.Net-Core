@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Workly.Domain;
-using Workly.Repository.Models;
+
 
 namespace Workly.Repository
 {
@@ -31,6 +31,7 @@ namespace Workly.Repository
             {
                 entity.HasIndex(e => e.Mail).IsUnique();
             });
+            //builder.Entity<Job>().Property(e => e.Id).ValueGeneratedNever();
         }
 
         //Lets take the advantage of.net core and use the DI

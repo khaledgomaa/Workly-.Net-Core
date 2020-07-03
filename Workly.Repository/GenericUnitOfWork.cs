@@ -10,9 +10,12 @@ namespace Workly.Repository
     public class GenericUnitOfWork : IUnitOfWork
     {
         private readonly AgentDbContext dbContext;
-        private WorkerRepository<User> userRepository;
-        private WorkerRepository<UserAddress> userAddressRepository;
-        private OrderRepository orderRepository;
+        private  WorkerRepository<User> userRepository;
+        private  WorkerRepository<UserAddress> userAddressRepository;
+        private  OrderRepository orderRepository;
+        private  WorkerRepository<Agent> agentRepository;
+        private WorkerRepository<Job> jobRepository;
+        private WorkerRepository<UserAddress> addressRepository;
 
         public GenericUnitOfWork(AgentDbContext dbContext)
         {
@@ -26,6 +29,16 @@ namespace Workly.Repository
                 if (this.userRepository == null)
                     this.userRepository = new WorkerRepository<User>(dbContext);
                 return this.userRepository;
+            }
+        }
+
+        public WorkerRepository<Agent> AgentRepository
+        {
+            get
+            {
+                if (this.agentRepository == null)
+                    this.agentRepository = new WorkerRepository<Agent>(dbContext);
+                return this.agentRepository;
             }
         }
 
@@ -46,6 +59,26 @@ namespace Workly.Repository
                 if (this.orderRepository == null)
                     this.orderRepository = new OrderRepository(dbContext);
                 return this.orderRepository;
+            }
+        }
+
+        public WorkerRepository<Job> JobRepository
+        {
+            get
+            {
+                if (this.jobRepository == null)
+                    this.jobRepository = new WorkerRepository<Job>(dbContext);
+                return this.jobRepository;
+            }
+        }
+
+        public WorkerRepository<UserAddress> AddressRepository
+        {
+            get
+            {
+                if (this.addressRepository == null)
+                    this.addressRepository = new WorkerRepository<UserAddress>(dbContext);
+                return this.addressRepository;
             }
         }
 

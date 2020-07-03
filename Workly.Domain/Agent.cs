@@ -8,10 +8,11 @@ namespace Workly.Domain
 {
     public class Agent
     {
+        [Key]
         public int Id { get; set; }
 
         [Required]
-        public string Name { get; set; }
+        public string Email { get; set; }
 
         public int PhoneNumber { get; set; }
 
@@ -20,8 +21,16 @@ namespace Workly.Domain
 
         [ForeignKey("Job")]
         public int JobId { get; set; }
-        public Job Job { get; set; }
+        public virtual Job Job { get; set; }
+
+        [Required]
+        public string Location { get; set; }
 
         public decimal Rate { get; set; }
+
+        [ForeignKey("ApplicationUser")]
+        [Required]
+        public string AspNetUsersId { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
     }
 }

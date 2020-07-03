@@ -8,5 +8,6 @@ namespace Workly.Service.Interfaces
 {
     public interface IOrderManager : IOrderRepository
     {
+        void Complete();
     }
 }

@@ -12,6 +12,6 @@ namespace Workly.Domain
         [Required]
         public string Name { get; set; }
 
-        public List<Agent> Agent { get; set; }
+        public virtual List<Agent> Agent { get; set; }
     }
 }

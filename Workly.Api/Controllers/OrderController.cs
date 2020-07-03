@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Workly.Domain;
+using Workly.Domain.ViewModels;
+using Workly.Repository;
 using Workly.Service.Interfaces;
 
 namespace Workly.Api.Controllers
@@ -13,15 +18,49 @@ namespace Workly.Api.Controllers
     public class OrderController : ControllerBase
     {
         private readonly IOrderManager orderDbContext;
+        private readonly UserManager<ApplicationUser> userManager;
+        private readonly IUserManager iUserManager;
+        private readonly IAgentManager agentManager;
 
-        public OrderController(IOrderManager orderDbContext)
+        public OrderController(  IOrderManager orderDbContext
+                               , UserManager<ApplicationUser> userManager
+                               , IUserManager iUserManager
+                               , IAgentManager agentManager)
         {
             this.orderDbContext = orderDbContext;
+            this.userManager = userManager;
+            this.agentManager = agentManager;
+            this.iUserManager = iUserManager;
         }
 
-        public IActionResult RequestOrder()
-        {
-            return Ok();
-        }
+        //public async Task<IActionResult> RequestOrder(OrderRequest orderRequest)
+        //{
+        //    if (!ModelState.IsValid)
+        //        return BadRequest();
+
+        //    var agentInAspNetUsers = await userManager.FindByNameAsync(orderRequest.AgentName);
+
+        //    var userInAspNetUsers = await userManager.FindByNameAsync(orderRequest.UserName);
+
+        //    if (agentInAspNetUsers == null || userInAspNetUsers == null)
+        //        return NotFound();
+
+        //    User user = iUserManager.GetFirstOrDefaultByParam(u => u.AspNetUsersId == userInAspNetUsers.Id);
+        //    Agent agent = agentManager.GetFirstOrDefaultByParam(a => a.AspNetUsersId == agentInAspNetUsers.Id);
+
+        //    Order order = new Order
+        //    {
+        //        Agent = agent , User = user , Location = orderRequest.Location , AgentRate = agent.Rate ,
+        //        Date = DateTime.UtcNow
+        //    };
+
+        //    orderDbContext.Add(order);
+
+        //    orderDbContext.Complete();
+
+        //    //manage repository and services again
+
+        //    return Ok();
+        //}
     }
 }
