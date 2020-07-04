@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,15 @@ namespace Workly.Repository.Implementation
 
         public void Add(Order order)
         {
-            dbContext.Set<Order>().FromSqlRaw("InsertIntoOrder",order);
+            SqlParameter[] param = new SqlParameter[] {
+            new SqlParameter("@user_id",order.UserId),
+            new SqlParameter("@agent_id", order.AgentId),
+            new SqlParameter("@loc", order.Location),
+            new SqlParameter("@mydate", order.Date),
+            new SqlParameter("@rate", order.AgentRate)
+        };
+            //dbContext.Orders.FromSqlRaw("exec InsertIntoOrder @user_id,@agent_id,@loc,@mydate,@rate", param);
+            dbContext.Database.ExecuteSqlCommand("InsertIntoOrder @user_id,@agent_id,@loc,@mydate,@rate", param);
         }
 
         public IEnumerable<Order> GetAll()
@@ -35,7 +44,7 @@ namespace Workly.Repository.Implementation
 
         public Order GetFirstOrDefaultByParam(Expression<Func<Order, bool>> wherePredict)
         {
-            throw new NotImplementedException();
+            return dbContext.Orders.FirstOrDefault(wherePredict);
         }
 
         public void AddRange(IEnumerable<Order> entity)

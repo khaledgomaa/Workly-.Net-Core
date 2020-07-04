@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Workly.Domain;
 using Workly.Domain.ViewModels;
@@ -33,34 +34,57 @@ namespace Workly.Api.Controllers
             this.iUserManager = iUserManager;
         }
 
-        //public async Task<IActionResult> RequestOrder(OrderRequest orderRequest)
-        //{
-        //    if (!ModelState.IsValid)
-        //        return BadRequest();
+        [HttpPost]
+        public async Task<IActionResult> RequestOrder(OrderRequest orderRequest)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
 
-        //    var agentInAspNetUsers = await userManager.FindByNameAsync(orderRequest.AgentName);
+            var agentInAspNetUsers = await userManager.FindByNameAsync(orderRequest.AgentName);
 
-        //    var userInAspNetUsers = await userManager.FindByNameAsync(orderRequest.UserName);
+            var userInAspNetUsers = await userManager.FindByNameAsync(orderRequest.UserName);
 
-        //    if (agentInAspNetUsers == null || userInAspNetUsers == null)
-        //        return NotFound();
+            if (agentInAspNetUsers == null || userInAspNetUsers == null)
+                return NotFound();
 
-        //    User user = iUserManager.GetFirstOrDefaultByParam(u => u.AspNetUsersId == userInAspNetUsers.Id);
-        //    Agent agent = agentManager.GetFirstOrDefaultByParam(a => a.AspNetUsersId == agentInAspNetUsers.Id);
+            User user = iUserManager.GetFirstOrDefaultByParam(u => u.AspNetUsersId == userInAspNetUsers.Id);
+            Agent agent = agentManager.GetFirstOrDefaultByParam(a => a.AspNetUsersId == agentInAspNetUsers.Id);
 
-        //    Order order = new Order
-        //    {
-        //        Agent = agent , User = user , Location = orderRequest.Location , AgentRate = agent.Rate ,
-        //        Date = DateTime.UtcNow
-        //    };
+            bool checkIfUserHasAlreadyRequestAgent = CheckUserRequestAgent(user.Id , agent.Id);
 
-        //    orderDbContext.Add(order);
+            if(!checkIfUserHasAlreadyRequestAgent)
+            {
+                Order order = new Order
+                {
+                    AgentId = agent.Id,
+                    UserId = user.Id,
+                    Location = orderRequest.Location,
+                    AgentRate = agent.Rate,
+                    Date = DateTime.UtcNow
+                };
 
-        //    orderDbContext.Complete();
+                orderDbContext.Add(order);
 
-        //    //manage repository and services again
+                orderDbContext.Complete();
 
-        //    return Ok();
-        //}
+                return Ok();
+            }
+
+            return BadRequest();
+            
+        }
+
+        private bool CheckUserRequestAgent(int userId , int agentId)
+        {
+
+            var checkIfRequestExist = orderDbContext
+                                        .GetFirstOrDefaultByParam
+                                        (o => o.AgentId == agentId && o.UserId == userId && o.AgentAction == 0);
+
+            if (checkIfRequestExist == null)
+                return false;
+
+            return true;
+        }
     }
 }

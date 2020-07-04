@@ -31,7 +31,8 @@ namespace Workly.Repository
             {
                 entity.HasIndex(e => e.Mail).IsUnique();
             });
-            //builder.Entity<Job>().Property(e => e.Id).ValueGeneratedNever();
+
+            
         }
 
         //Lets take the advantage of.net core and use the DI
