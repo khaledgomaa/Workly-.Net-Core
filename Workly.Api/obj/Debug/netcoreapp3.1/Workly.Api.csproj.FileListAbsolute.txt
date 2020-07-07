@@ -64,8 +64,6 @@ C:\Users\KhaledGomaa\source\repos\Workly\Workly.Api\bin\Debug\netcoreapp3.1\Work
 E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\obj\Debug\netcoreapp3.1\Workly.Api.csprojAssemblyReference.cache
 E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\obj\Debug\netcoreapp3.1\Workly.Api.AssemblyInfoInputs.cache
 E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\obj\Debug\netcoreapp3.1\Workly.Api.AssemblyInfo.cs
-E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\obj\Debug\netcoreapp3.1\Workly.Api.csproj.CoreCompileInputs.cache
-E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\obj\Debug\netcoreapp3.1\Workly.Api.MvcApplicationPartsAssemblyInfo.cache
 E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\obj\Debug\netcoreapp3.1\Workly.Api.dll
 E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\obj\Debug\netcoreapp3.1\Workly.Api.pdb
 E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\bin\Debug\netcoreapp3.1\appsettings.Development.json
@@ -126,3 +124,13 @@ E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\obj\Debug\netcorea
 E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\obj\Debug\netcoreapp3.1\staticwebassets\Workly.Api.StaticWebAssets.Manifest.cache
 E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\obj\Debug\netcoreapp3.1\staticwebassets\Workly.Api.StaticWebAssets.xml
 E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\obj\Debug\netcoreapp3.1\Workly.Api.genruntimeconfig.cache
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\bin\Debug\netcoreapp3.1\AutoMapper.dll
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\bin\Debug\netcoreapp3.1\Cloudinary.Core.dll
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\obj\Debug\netcoreapp3.1\Workly.Api.csproj.CoreCompileInputs.cache
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\obj\Debug\netcoreapp3.1\Workly.Api.MvcApplicationPartsAssemblyInfo.cache

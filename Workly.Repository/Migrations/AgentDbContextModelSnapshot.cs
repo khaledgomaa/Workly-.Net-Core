@@ -165,6 +165,10 @@ namespace Workly.Repository.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Experience")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ImagePath")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -190,6 +194,21 @@ namespace Workly.Repository.Migrations
                     b.HasIndex("JobId");
 
                     b.ToTable("Agents");
+                });
+
+            modelBuilder.Entity("Workly.Domain.AgentSkill", b =>
+                {
+                    b.Property<int>("AgentId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SkillId")
+                        .HasColumnType("int");
+
+                    b.HasKey("AgentId", "SkillId");
+
+                    b.HasIndex("SkillId");
+
+                    b.ToTable("AgentSkills");
                 });
 
             modelBuilder.Entity("Workly.Domain.ApplicationUser", b =>
@@ -328,6 +347,22 @@ namespace Workly.Repository.Migrations
                     b.ToTable("Orders");
                 });
 
+            modelBuilder.Entity("Workly.Domain.Skill", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Skills");
+                });
+
             modelBuilder.Entity("Workly.Domain.User", b =>
                 {
                     b.Property<int>("Id")
@@ -450,6 +485,21 @@ namespace Workly.Repository.Migrations
                     b.HasOne("Workly.Domain.Job", "Job")
                         .WithMany("Agent")
                         .HasForeignKey("JobId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Workly.Domain.AgentSkill", b =>
+                {
+                    b.HasOne("Workly.Domain.Agent", "Agent")
+                        .WithMany()
+                        .HasForeignKey("AgentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Workly.Domain.Skill", "Skill")
+                        .WithMany()
+                        .HasForeignKey("SkillId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

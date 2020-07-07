@@ -24,6 +24,10 @@ namespace Workly.Repository
 
         public DbSet<Notification> Notifications { get; set; }
 
+        public DbSet<Skill> Skills { get; set; }
+
+        public DbSet<AgentSkill> AgentSkills { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -32,6 +36,7 @@ namespace Workly.Repository
                 entity.HasIndex(e => e.Mail).IsUnique();
             });
 
+            builder.Entity<AgentSkill>().HasKey(a => new { a.AgentId, a.SkillId });
             
         }
 

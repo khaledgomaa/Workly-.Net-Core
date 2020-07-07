@@ -11,6 +11,12 @@
     <Compile Remove="Migrations\20200702152603_droptableAgent.Designer.cs" />
     <Compile Remove="Migrations\20200702152955_UpdateIdentityToIdiNJobTable.cs" />
     <Compile Remove="Migrations\20200702152955_UpdateIdentityToIdiNJobTable.Designer.cs" />
+    <Compile Remove="Migrations\20200705121107_addnewtable.cs" />
+    <Compile Remove="Migrations\20200705121107_addnewtable.Designer.cs" />
+    <Compile Remove="Migrations\20200705152117_try.cs" />
+    <Compile Remove="Migrations\20200705152117_try.Designer.cs" />
+    <Compile Remove="Migrations\20200705152711_try.cs" />
+    <Compile Remove="Migrations\20200705152711_try.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

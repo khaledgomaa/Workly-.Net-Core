@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -5,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 using Workly.Domain;
 using Workly.Repository;
 using Workly.Repository.Implementation;
@@ -26,6 +28,7 @@ namespace Workly.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper(typeof(Startup));
             services.AddControllers();
             services.AddDbContextPool<AgentDbContext>
                 (options => options.UseSqlServer(Configuration.GetConnectionString("MyWorkerDbConnection")));
@@ -38,6 +41,8 @@ namespace Workly.Api
             services.AddTransient<IAgentManager, AgentManager>();
             services.AddTransient<IJobManager, JobManager>();
             services.AddTransient<IAddressManager, AddressManager>();
+            services.AddTransient<ISkillManager, SkillManager>();
+            services.AddTransient<IAgentSkillManager, AgentSkillManager>();
 
             services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {
@@ -48,6 +53,14 @@ namespace Workly.Api
                 options.Password.RequireNonAlphanumeric = false;
 
             }).AddEntityFrameworkStores<AgentDbContext>();
+            //var mappingConfig = new MapperConfiguration(mc =>
+            //{
+            //    mc.AddProfile(new MapperProfile());
+            //});
+
+            //IMapper mapper = mappingConfig.CreateMapper();
+            //services.AddSingleton(mapper);
+            //services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +70,7 @@ namespace Workly.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseCors(options => options.SetIsOriginAllowed(s => _ = true).AllowAnyHeader().AllowAnyMethod().AllowCredentials());
 
             app.UseRouting();
 

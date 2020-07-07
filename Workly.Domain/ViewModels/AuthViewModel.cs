@@ -28,6 +28,9 @@ namespace Workly.Domain.ViewModels
 
         [Required]
         public Job JobInfo { get; set; }
+
+        [Required]
+        public IEnumerable<string> Skills { get; set; }
     }
 
     public class MyUserAspNet
@@ -40,7 +43,13 @@ namespace Workly.Domain.ViewModels
         public string Password { get; set; }
     }
 
+    public class LoginModel
+    {
+        [Required]
+        public string UserName { get; set; }
 
+        public string Password { get; set; }
+    }
     
 
 }

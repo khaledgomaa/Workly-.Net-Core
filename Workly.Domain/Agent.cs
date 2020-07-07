@@ -28,9 +28,14 @@ namespace Workly.Domain
 
         public decimal Rate { get; set; }
 
+        [Required]
+        public string Experience { get; set; }
+
         [ForeignKey("ApplicationUser")]
         [Required]
         public string AspNetUsersId { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
+
+        public virtual List<AgentSkill> Agents { get; set; }
     }
 }

@@ -19,6 +19,10 @@ namespace Workly.Repository
         WorkerRepository<Job> JobRepository { get; }
 
         WorkerRepository<UserAddress> AddressRepository { get; }
+
+        WorkerRepository<Skill> SkillRepository { get; }
+
+        WorkerRepository<AgentSkill> AgentSkillRepository { get; }
         void Complete();
     }
 }
