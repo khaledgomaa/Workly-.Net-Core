@@ -41,6 +41,11 @@ namespace Workly.Service.Implementation
             return unitOfWork.JobRepository.GetFirstOrDefaultByParam(wherePredict);
         }
 
+        public Job GetFirstOrDefautWithInclude(Expression<Func<Job, bool>> includePredict, Expression<Func<Job, bool>> wherePredict)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Remove(Job entity)
         {
             throw new NotImplementedException();

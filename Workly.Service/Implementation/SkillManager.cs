@@ -40,6 +40,11 @@ namespace Workly.Service.Implementation
             return unitOfWork.SkillRepository.GetFirstOrDefaultByParam(wherePredict);
         }
 
+        public Skill GetFirstOrDefautWithInclude(Expression<Func<Skill, bool>> includePredict, Expression<Func<Skill, bool>> wherePredict)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Remove(Skill entity)
         {
             throw new NotImplementedException();

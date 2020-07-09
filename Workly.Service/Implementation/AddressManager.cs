@@ -46,6 +46,11 @@ namespace Workly.Service.Implementation
             throw new NotImplementedException();
         }
 
+        public UserAddress GetFirstOrDefautWithInclude(Expression<Func<UserAddress, bool>> includePredict, Expression<Func<UserAddress, bool>> wherePredict)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Remove(UserAddress entity)
         {
             throw new NotImplementedException();

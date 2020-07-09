@@ -11,12 +11,14 @@ namespace Workly.Repository.Interfaces
             IEnumerable<TEntity> GetAll();
             TEntity GetFirstOrDefault(int recordId);
             TEntity GetFirstOrDefaultByParam(Expression<Func<TEntity, bool>> wherePredict);
+            TEntity GetFirstOrDefautWithInclude(Expression<Func<TEntity, bool>> includePredict , Expression<Func<TEntity, bool>> wherePredict);
 
             #endregion
 
             #region Add entities
             void Add(TEntity entity);
             void AddRange(IEnumerable<TEntity> entity);
+            
 
             #endregion
 

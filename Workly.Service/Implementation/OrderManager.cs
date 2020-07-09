@@ -44,6 +44,11 @@ namespace Workly.Service.Implementation
             return dbContext.OrderRepository.GetFirstOrDefaultByParam(wherePredict);
         }
 
+        public Order GetFirstOrDefautWithInclude(Expression<Func<Order, bool>> includePredict, Expression<Func<Order, bool>> wherePredict)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Remove(Order entity)
         {
             throw new NotImplementedException();

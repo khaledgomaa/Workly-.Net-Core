@@ -132,5 +132,11 @@ E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\bin\Debug\netcorea
 E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\bin\Debug\netcoreapp3.1\Cloudinary.Core.dll
 E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\obj\Debug\netcoreapp3.1\Workly.Api.csproj.CoreCompileInputs.cache
 E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\obj\Debug\netcoreapp3.1\Workly.Api.MvcApplicationPartsAssemblyInfo.cache

@@ -81,9 +81,16 @@ namespace Workly.Api.Controllers
 
             if (id != null)
             {
-                registerationModel.UserInfo.AspNetUsersId = id;
-                dbContextUser.Complete();
-                return Ok();
+                string imagePath = UploadImageToCloudinary(registerationModel.UserInfo.ImagePath);
+
+                if (imagePath != null)
+                {
+                    registerationModel.UserInfo.ImagePath = imagePath;
+                    registerationModel.UserInfo.AspNetUsersId = id;
+                    dbContextUser.Complete();
+                    return Ok();
+                }
+        
             }
             return BadRequest();
         }
