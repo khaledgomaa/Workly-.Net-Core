@@ -61,13 +61,7 @@ namespace Workly.Repository.Implementation
         {
             throw new NotImplementedException();
         }
-
-        public Order GetFirstOrDefautWithInclude(Expression<Func<Order, bool>> wherePredict)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Order GetFirstOrDefautWithInclude(Expression<Func<Order, bool>> includePredict, Expression<Func<Order, bool>> wherePredict)
+        public IEnumerable<Order> GetAllWithInclude(Expression<Func<Order, object>> includePredict, Expression<Func<Order, bool>> wherePredict)
         {
             throw new NotImplementedException();
         }

@@ -46,7 +46,7 @@ namespace Workly.Service.Implementation
             throw new NotImplementedException();
         }
 
-        public UserAddress GetFirstOrDefautWithInclude(Expression<Func<UserAddress, bool>> includePredict, Expression<Func<UserAddress, bool>> wherePredict)
+        public IEnumerable<UserAddress> GetAllWithInclude(Expression<Func<UserAddress, object>> includePredict, Expression<Func<UserAddress, bool>> wherePredict)
         {
             throw new NotImplementedException();
         }

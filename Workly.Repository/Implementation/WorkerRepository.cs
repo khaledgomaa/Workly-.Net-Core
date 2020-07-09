@@ -47,9 +47,9 @@ namespace Workly.Repository.Implementation
             return dbContext.Set<TEntity>().Where(wherePredict).FirstOrDefault();
         }
 
-        public TEntity GetFirstOrDefautWithInclude(Expression<Func<TEntity, bool>> includePredict, Expression<Func<TEntity, bool>> wherePredict)
+        public IEnumerable<TEntity> GetAllWithInclude(Expression<Func<TEntity, object>> includePredict, Expression<Func<TEntity, bool>> wherePredict)
         {
-            return dbContext.Set<TEntity>().Include(includePredict).Where(wherePredict).FirstOrDefault();
+            return dbContext.Set<TEntity>().Include(includePredict).Where(wherePredict);
         }
         #endregion
 

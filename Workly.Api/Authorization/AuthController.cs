@@ -24,6 +24,8 @@ namespace Workly.Api.Authorization
         {
             this.userManager = userManager;
         }
+
+        [HttpPost]
         public async Task<IActionResult> GetToken(LoginModel model)
         {
             if (!ModelState.IsValid)

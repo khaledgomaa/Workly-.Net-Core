@@ -11,7 +11,7 @@ namespace Workly.Repository.Interfaces
             IEnumerable<TEntity> GetAll();
             TEntity GetFirstOrDefault(int recordId);
             TEntity GetFirstOrDefaultByParam(Expression<Func<TEntity, bool>> wherePredict);
-            TEntity GetFirstOrDefautWithInclude(Expression<Func<TEntity, bool>> includePredict , Expression<Func<TEntity, bool>> wherePredict);
+            IEnumerable<TEntity> GetAllWithInclude(Expression<Func<TEntity, object>> includePredict , Expression<Func<TEntity, bool>> wherePredict);
 
             #endregion
 

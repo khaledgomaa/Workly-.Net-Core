@@ -43,9 +43,9 @@ namespace Workly.Service.Implementation
             return unitOfWork.AgentRepository.GetFirstOrDefaultByParam(wherePredict);
         }
 
-        public Agent GetFirstOrDefautWithInclude(Expression<Func<Agent, bool>> includePredict, Expression<Func<Agent, bool>> wherePredict)
+        public IEnumerable<Agent> GetAllWithInclude(Expression<Func<Agent, object>> includePredict, Expression<Func<Agent, bool>> wherePredict)
         {
-            return unitOfWork.AgentRepository.GetFirstOrDefautWithInclude(includePredict, wherePredict);
+            return unitOfWork.AgentRepository.GetAllWithInclude(includePredict, wherePredict);
         }
 
         public void Remove(Agent entity)

@@ -42,9 +42,9 @@ namespace Workly.Service.Implementation
             return unitOfWork.AgentSkillRepository.GetFirstOrDefaultByParam(wherePredict);
         }
 
-        public AgentSkill GetFirstOrDefautWithInclude(Expression<Func<AgentSkill, bool>> includePredict, Expression<Func<AgentSkill, bool>> wherePredict)
+        public IEnumerable<AgentSkill> GetAllWithInclude(Expression<Func<AgentSkill, object>> includePredict, Expression<Func<AgentSkill, bool>> wherePredict)
         {
-            throw new NotImplementedException();
+            return unitOfWork.AgentSkillRepository.GetAllWithInclude(includePredict, wherePredict);
         }
 
         public void Remove(AgentSkill entity)
