@@ -68,6 +68,11 @@ namespace Workly.Service.Implementation
 
         public IEnumerable<User> GetAllWithInclude(Expression<Func<User, object>> includePredict, Expression<Func<User, bool>> wherePredict)
         {
+            return dbContext.UserRepository.GetAllWithInclude(includePredict, wherePredict);
+        }
+
+        public void RemoveRange(IEnumerable<User> entities)
+        {
             throw new NotImplementedException();
         }
     }

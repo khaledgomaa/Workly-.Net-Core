@@ -55,5 +55,10 @@ namespace Workly.Service.Implementation
         {
             throw new NotImplementedException();
         }
+
+        public void RemoveRange(IEnumerable<Job> entities)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

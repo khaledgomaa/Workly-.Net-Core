@@ -31,9 +31,12 @@ namespace Workly.Api.Authorization
             if (!ModelState.IsValid)
                 return Unauthorized();
 
-            LoginModel checkUserFoundInDb = await Authenticate(model);
-            if (checkUserFoundInDb == null)
+            ApplicationUser user = await Authenticate(model);
+
+            if (user == null)
                 return Unauthorized();
+
+            IList<string> role = await userManager.GetRolesAsync(user);
 
             var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
 
@@ -45,17 +48,24 @@ namespace Workly.Api.Authorization
                     expires: DateTime.Now.AddDays(1),
                     signingCredentials: signInCredentials
                 );
+            //new JwtSecurityTokenHandler().WriteToken(token);
 
-            return Ok(new JwtSecurityTokenHandler().WriteToken(token));
+            LoginReturn loginReturn = new LoginReturn
+            {
+                Token = new JwtSecurityTokenHandler().WriteToken(token).ToString(),
+                Role = role.FirstOrDefault()
+            };
+
+            return Ok(loginReturn);
         }
-        private async Task<LoginModel> Authenticate(LoginModel model)
+        private async Task<ApplicationUser> Authenticate(LoginModel model)
         {
             var user = await userManager.FindByNameAsync(model.UserName);
             if (user == null)
                 return null;
             bool checkPassword = await userManager.CheckPasswordAsync(user, model.Password);
             if (checkPassword)
-                return model;
+                return user;
             return null;
         }
     }

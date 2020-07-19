@@ -30,7 +30,7 @@ namespace Workly.Domain.ViewModels
         public Job JobInfo { get; set; }
 
         [Required]
-        public IEnumerable<string> Skills { get; set; }
+        public IEnumerable<Skill> Skills { get; set; }
     }
 
     public class MyUserAspNet
@@ -51,5 +51,10 @@ namespace Workly.Domain.ViewModels
         public string Password { get; set; }
     }
     
+    public class LoginReturn
+    {
+        public string Token { get; set; }
 
+        public string Role { get; set; }
+    }
 }

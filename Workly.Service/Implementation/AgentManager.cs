@@ -57,5 +57,15 @@ namespace Workly.Service.Implementation
         {
             throw new NotImplementedException();
         }
+
+        public void Complete()
+        {
+            unitOfWork.Complete();
+        }
+
+        public void RemoveRange(IEnumerable<Agent> entities)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

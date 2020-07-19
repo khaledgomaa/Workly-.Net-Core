@@ -13,7 +13,6 @@ using Workly.Service.Interfaces;
 namespace Workly.Api.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize(AuthenticationSchemes = "Bearer")]
     [ApiController]
     public class JobsController : ControllerBase
     {

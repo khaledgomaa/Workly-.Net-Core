@@ -29,7 +29,7 @@ namespace Workly.Service.Implementation
 
         public IEnumerable<AgentSkill> GetAll()
         {
-            throw new NotImplementedException();
+            return unitOfWork.AgentSkillRepository.GetAll();
         }
 
         public AgentSkill GetFirstOrDefault(int recordId)
@@ -55,6 +55,16 @@ namespace Workly.Service.Implementation
         public void RemoveByWhereClause(Func<AgentSkill, bool> wherePredict)
         {
             throw new NotImplementedException();
+        }
+
+        public void Complete()
+        {
+            unitOfWork.Complete();
+        }
+
+        public void RemoveRange(IEnumerable<AgentSkill> entities)
+        {
+            unitOfWork.AgentSkillRepository.RemoveRange(entities);
         }
     }
 }

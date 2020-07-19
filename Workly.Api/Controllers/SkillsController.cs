@@ -14,7 +14,6 @@ using Workly.Service.Interfaces;
 
 namespace Workly.Api.Controllers
 {
-    [Authorize(AuthenticationSchemes = "Bearer")]
     [Route("api/[controller]")]
     [ApiController]
     public class SkillsController : ControllerBase

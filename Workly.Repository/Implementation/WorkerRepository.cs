@@ -64,6 +64,15 @@ namespace Workly.Repository.Implementation
 
         }
 
+        public void RemoveRange(IEnumerable<TEntity> entities)
+        {
+            foreach(TEntity entity in entities)
+            {
+                dbContext.Entry(entity).State = EntityState.Deleted;
+            }
+            
+        }
+
         #endregion
 
 

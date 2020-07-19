@@ -60,5 +60,10 @@ namespace Workly.Service.Implementation
         {
             throw new NotImplementedException();
         }
+
+        public void RemoveRange(IEnumerable<UserAddress> entities)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

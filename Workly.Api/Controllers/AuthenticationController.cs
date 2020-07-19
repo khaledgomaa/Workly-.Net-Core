@@ -6,10 +6,12 @@ using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Workly.Api.Cloudinary;
 using Workly.Domain;
 using Workly.Domain.ViewModels;
 using Workly.Repository.Interfaces;
 using Workly.Service.Interfaces;
+
 
 namespace Workly.Api.Controllers
 {
@@ -36,7 +38,7 @@ namespace Workly.Api.Controllers
 
         private readonly IAgentSkillManager agentSkillManager;
 
-        public static Cloudinary cloudinary;
+        public static CloudinaryDotNet.Cloudinary cloudinary;
 
         public const string CLOUD_NAME = "dcrllmnai";
         public const string API_KEY = "581332317551619";
@@ -81,7 +83,7 @@ namespace Workly.Api.Controllers
 
             if (id != null)
             {
-                string imagePath = UploadImageToCloudinary(registerationModel.UserInfo.ImagePath);
+                string imagePath = UploadToCloudinary.UploadImageToCloudinary(registerationModel.UserInfo.ImagePath);
 
                 if (imagePath != null)
                 {
@@ -111,7 +113,7 @@ namespace Workly.Api.Controllers
                 return BadRequest();
 
             //Get Skills from Database
-            IEnumerable<Skill> skillsInDb = skillManager.GetAll().Where(s => registerationModelForAgents.Skills.Contains(s.Name));
+            IEnumerable<Skill> skillsInDb = skillManager.GetAll().Where(s => registerationModelForAgents.Skills.ToList().Select(a=>a.Name).Contains(s.Name));
 
             if (skillsInDb == null)
                 return BadRequest();
@@ -128,7 +130,7 @@ namespace Workly.Api.Controllers
 
                 AddAgentSkills(skillsInDb, registerationModelForAgents.AgentInfo);
 
-                string imagePath = UploadImageToCloudinary(registerationModelForAgents.AgentInfo.ImagePath);
+                string imagePath = UploadToCloudinary.UploadImageToCloudinary(registerationModelForAgents.AgentInfo.ImagePath);
 
                 if(imagePath != null)
                 {
@@ -186,28 +188,6 @@ namespace Workly.Api.Controllers
 
             return (await userManager.FindByNameAsync(userSecurity.UserName) == null) ? false : true;
         }
-
-        private string UploadImageToCloudinary(string Image)
-        {
-            Account account = new Account(CLOUD_NAME, API_KEY, API_SECRET);
-            cloudinary = new Cloudinary(account);
-            try
-            {
-                var uploadParams = new ImageUploadParams()
-                {
-                    File = new FileDescription(Image)
-                };
-                //new image path on cloudinary
-                var urlOnCloudinary = cloudinary.UploadAsync(uploadParams).Result.Uri;
-                return urlOnCloudinary.ToString();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                return null;
-            }
-        }
-
 
         //onion architecture
         //Domain Layer , data access 

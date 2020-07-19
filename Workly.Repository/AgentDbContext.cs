@@ -36,7 +36,7 @@ namespace Workly.Repository
                 entity.HasIndex(e => e.Mail).IsUnique();
             });
 
-            builder.Entity<AgentSkill>().HasKey(a => new { a.AgentId, a.SkillId });
+            //builder.Entity<AgentSkill>().HasKey(a => new { a.AgentId, a.SkillId });
             
         }
 

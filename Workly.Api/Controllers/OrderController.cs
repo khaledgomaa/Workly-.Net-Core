@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -14,6 +16,7 @@ using Workly.Service.Interfaces;
 
 namespace Workly.Api.Controllers
 {
+    [Authorize(AuthenticationSchemes = "Bearer")]
     [Route("api/[controller]")]
     [ApiController]
     public class OrderController : ControllerBase
@@ -23,7 +26,7 @@ namespace Workly.Api.Controllers
         private readonly IUserManager iUserManager;
         private readonly IAgentManager agentManager;
 
-        public OrderController(  IOrderManager orderDbContext
+        public OrderController(IOrderManager orderDbContext
                                , UserManager<ApplicationUser> userManager
                                , IUserManager iUserManager
                                , IAgentManager agentManager)
@@ -40,51 +43,68 @@ namespace Workly.Api.Controllers
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            var agentInAspNetUsers = await userManager.FindByNameAsync(orderRequest.AgentName);
+            UserAgent userAgent = await GetAgentAndUser(orderRequest.UserName, orderRequest.AgentName);
 
-            var userInAspNetUsers = await userManager.FindByNameAsync(orderRequest.UserName);
-
-            if (agentInAspNetUsers == null || userInAspNetUsers == null)
-                return NotFound();
-
-            User user = iUserManager.GetFirstOrDefaultByParam(u => u.AspNetUsersId == userInAspNetUsers.Id);
-            Agent agent = agentManager.GetFirstOrDefaultByParam(a => a.AspNetUsersId == agentInAspNetUsers.Id);
-
-            bool checkIfUserHasAlreadyRequestAgent = CheckUserRequestAgent(user.Id , agent.Id);
-
-            if(!checkIfUserHasAlreadyRequestAgent)
+            Order order = new Order
             {
-                Order order = new Order
-                {
-                    AgentId = agent.Id,
-                    UserId = user.Id,
-                    Location = orderRequest.Location,
-                    AgentRate = agent.Rate,
-                    Date = DateTime.UtcNow
-                };
+                AgentId = userAgent.Agent.Id,
+                UserId = userAgent.User.Id,
+                Location = userAgent.User.UserAddress.Address,
+                AgentRate = userAgent.Agent.Rate,
+                Date = DateTime.UtcNow
+            };
 
-                orderDbContext.Add(order);
+            orderDbContext.Add(order);
 
-                orderDbContext.Complete();
+            orderDbContext.Complete();
 
-                return Ok();
-            }
+            return Ok();
 
-            return BadRequest();
-            
         }
 
-        private bool CheckUserRequestAgent(int userId , int agentId)
+        [HttpGet("{userName}/{agentName}")]
+        public async Task<IActionResult> CheckUserRequestAgent(string userName, string agentName)
         {
+            UserAgent userAgent = await GetAgentAndUser(userName, agentName);
 
             var checkIfRequestExist = orderDbContext
                                         .GetFirstOrDefaultByParam
-                                        (o => o.AgentId == agentId && o.UserId == userId && o.AgentAction == 0);
+                                        (o => o.AgentId == userAgent.Agent.Id && o.UserId == userAgent.User.Id && o.AgentAction == 0);
 
             if (checkIfRequestExist == null)
-                return false;
+                return NotFound();
 
-            return true;
+            return Ok();
+        }
+
+        [HttpDelete("{userName}/{agentName}")]
+
+        public async Task<IActionResult> DeleteOrder(string userName, string agentName)
+        {
+            UserAgent userAgent = await GetAgentAndUser(userName, agentName);
+
+            orderDbContext.RemoveRange(orderDbContext
+                          .GetAll()
+                          .Where(o => o.AgentId == userAgent.Agent.Id && o.UserId == userAgent.User.Id && o.AgentAction == 0));
+
+            orderDbContext.Complete();
+
+            return Ok();
+        }
+
+        private async Task<UserAgent> GetAgentAndUser(string userName, string agentName)
+        {
+            var agentInAspNetUsers = await userManager.FindByNameAsync(agentName);
+
+            var userInAspNetUsers = await userManager.FindByNameAsync(userName);
+
+            if (agentInAspNetUsers == null || userInAspNetUsers == null)
+                return null;
+
+            IEnumerable<User> user = iUserManager.GetAllWithInclude(u=>u.UserAddress , u => u.AspNetUsersId == userInAspNetUsers.Id);
+            Agent agent = agentManager.GetFirstOrDefaultByParam(a => a.AspNetUsersId == agentInAspNetUsers.Id);
+
+            return new UserAgent {User = user.FirstOrDefault() , Agent = agent};
         }
     }
 }

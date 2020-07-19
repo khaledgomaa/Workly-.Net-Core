@@ -34,7 +34,7 @@ namespace Workly.Repository.Implementation
 
         public IEnumerable<Order> GetAll()
         {
-            throw new NotImplementedException();
+            return dbContext.Orders.ToList();
         }
 
         public Order GetFirstOrDefault(int recordId)
@@ -54,7 +54,7 @@ namespace Workly.Repository.Implementation
 
         public void Remove(Order entity)
         {
-            throw new NotImplementedException();
+            dbContext.Entry(entity).State = EntityState.Deleted;
         }
 
         public void RemoveByWhereClause(Func<Order, bool> wherePredict)
@@ -63,7 +63,15 @@ namespace Workly.Repository.Implementation
         }
         public IEnumerable<Order> GetAllWithInclude(Expression<Func<Order, object>> includePredict, Expression<Func<Order, bool>> wherePredict)
         {
-            throw new NotImplementedException();
+            return dbContext.Orders.Include(includePredict).Where(wherePredict);
+        }
+
+        public void RemoveRange(IEnumerable<Order> entities)
+        {
+            foreach (Order entity in entities)
+            {
+                dbContext.Entry(entity).State = EntityState.Deleted;
+            }
         }
     }
 }

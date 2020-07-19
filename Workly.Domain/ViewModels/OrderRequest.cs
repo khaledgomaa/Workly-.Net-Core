@@ -13,7 +13,5 @@ namespace Workly.Domain.ViewModels
         [Required]
         public string AgentName { get; set; }
 
-        [Required]
-        public string Location { get; set; }
     }
 }

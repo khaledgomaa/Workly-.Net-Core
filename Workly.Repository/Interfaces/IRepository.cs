@@ -12,7 +12,7 @@ namespace Workly.Repository.Interfaces
             TEntity GetFirstOrDefault(int recordId);
             TEntity GetFirstOrDefaultByParam(Expression<Func<TEntity, bool>> wherePredict);
             IEnumerable<TEntity> GetAllWithInclude(Expression<Func<TEntity, object>> includePredict , Expression<Func<TEntity, bool>> wherePredict);
-
+            
             #endregion
 
             #region Add entities
@@ -26,6 +26,7 @@ namespace Workly.Repository.Interfaces
 
             void Remove(TEntity entity);
             void RemoveByWhereClause(Func<TEntity, bool> wherePredict);
+            void RemoveRange(IEnumerable<TEntity> entities);
 
             #endregion
 

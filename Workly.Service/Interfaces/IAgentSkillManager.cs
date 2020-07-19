@@ -8,5 +8,6 @@ namespace Workly.Service.Interfaces
 {
     public interface IAgentSkillManager : IRepository<AgentSkill>
     {
+        void Complete();
     }
 }
