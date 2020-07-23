@@ -25,12 +25,10 @@ namespace Workly.Api
 {
     public class Startup
     {
-        //private readonly UserManager<ApplicationUser> userManager;
-        private ICustomIdProvider customIdProvider;
-        public Startup(IConfiguration configuration, ICustomIdProvider customIdProvider)
+
+        public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            this.customIdProvider = customIdProvider;
         }
 
         public IConfiguration Configuration { get; }
