@@ -22,6 +22,8 @@ namespace Workly.Repository
 
         WorkerRepository<Skill> SkillRepository { get; }
 
+        WorkerRepository<Notification> NotificationRepository { get; }
+
         WorkerRepository<AgentSkill> AgentSkillRepository { get; }
         void Complete();
     }

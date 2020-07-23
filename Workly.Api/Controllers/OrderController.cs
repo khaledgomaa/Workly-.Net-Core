@@ -7,8 +7,10 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Workly.Api.Hubs;
 using Workly.Domain;
 using Workly.Domain.ViewModels;
 using Workly.Repository;
@@ -25,16 +27,22 @@ namespace Workly.Api.Controllers
         private readonly UserManager<ApplicationUser> userManager;
         private readonly IUserManager iUserManager;
         private readonly IAgentManager agentManager;
+        private IHubContext<NotificationSender> messageContext;
+        private readonly INotification notification;
 
         public OrderController(IOrderManager orderDbContext
                                , UserManager<ApplicationUser> userManager
                                , IUserManager iUserManager
-                               , IAgentManager agentManager)
+                               , IAgentManager agentManager
+                               , IHubContext<NotificationSender> messageContext
+                               , INotification notification)
         {
             this.orderDbContext = orderDbContext;
             this.userManager = userManager;
             this.agentManager = agentManager;
             this.iUserManager = iUserManager;
+            this.messageContext = messageContext;
+            this.notification = notification;
         }
 
         [HttpPost]
@@ -57,6 +65,8 @@ namespace Workly.Api.Controllers
             orderDbContext.Add(order);
 
             orderDbContext.Complete();
+
+            messageContext.Clients.All.SendAsync("Send", "New request has been established");
 
             return Ok();
 

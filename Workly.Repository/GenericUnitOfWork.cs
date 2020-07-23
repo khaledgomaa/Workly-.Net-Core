@@ -18,6 +18,7 @@ namespace Workly.Repository
         private WorkerRepository<UserAddress> addressRepository;
         private WorkerRepository<Skill> skillRespoitory;
         private WorkerRepository<AgentSkill> agentSkillRespoitory;
+        private WorkerRepository<Notification> notificationRepository;
 
         public GenericUnitOfWork(AgentDbContext dbContext)
         {
@@ -101,6 +102,16 @@ namespace Workly.Repository
                 if (this.agentSkillRespoitory == null)
                     this.agentSkillRespoitory = new WorkerRepository<AgentSkill>(dbContext);
                 return this.agentSkillRespoitory;
+            }
+        }
+
+        public WorkerRepository<Notification> NotificationRepository
+        {
+            get
+            {
+                if (this.notificationRepository == null)
+                    this.notificationRepository = new WorkerRepository<Notification>(dbContext);
+                return this.notificationRepository;
             }
         }
 

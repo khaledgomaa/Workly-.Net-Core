@@ -139,5 +139,7 @@ E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\bin\Debug\netcorea
 E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\bin\Debug\netcoreapp3.1\Cloudinary.Core.dll
 E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\bin\Debug\netcoreapp3.1\Cloudinary.Core.Sync.dll
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\bin\Debug\netcoreapp3.1\System.Net.WebSockets.WebSocketProtocol.dll
+E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\bin\Debug\netcoreapp3.1\Microsoft.AspNet.SignalR.Core.dll
 E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\obj\Debug\netcoreapp3.1\Workly.Api.csproj.CoreCompileInputs.cache
 E:\Courses\Workly in asp.net core\Workly-.Net-Core\Workly.Api\obj\Debug\netcoreapp3.1\Workly.Api.MvcApplicationPartsAssemblyInfo.cache

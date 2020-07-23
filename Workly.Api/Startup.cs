@@ -1,4 +1,5 @@
 using AutoMapper;
+using Microsoft.AspNet.SignalR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,6 +13,7 @@ using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Text;
 using Workly.Api.Authorization;
+using Workly.Api.Hubs;
 using Workly.Domain;
 using Workly.Repository;
 using Workly.Repository.Implementation;
@@ -23,11 +25,12 @@ namespace Workly.Api
 {
     public class Startup
     {
-        //string secretKey = "ERMN05OPLoDvbTTa/QkqLNMI7cPLguaRyHzyg7n5qNBVjQmtBhz4SzYh4NBVCXi3KJHlSXKP+oi2+bXr6CUYTR==";
-        
-        public Startup(IConfiguration configuration)
+        //private readonly UserManager<ApplicationUser> userManager;
+        private ICustomIdProvider customIdProvider;
+        public Startup(IConfiguration configuration, ICustomIdProvider customIdProvider)
         {
             Configuration = configuration;
+            this.customIdProvider = customIdProvider;
         }
 
         public IConfiguration Configuration { get; }
@@ -35,23 +38,6 @@ namespace Workly.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
-
-            //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-            //    .AddJwtBearer(option =>
-            //    {
-            //        option.TokenValidationParameters = new TokenValidationParameters
-            //        {
-            //            //what to validate
-            //            ValidateIssuer = true,
-            //            ValidateAudience = true,
-            //            ValidateIssuerSigningKey = true,
-            //            //validate Data
-            //            ValidIssuer = "workly.api",
-            //            ValidAudience = "allRoles",
-            //            IssuerSigningKey = symmetricSecurityKey
-            //        };
-            //    });
 
             services.AddAutoMapper(typeof(Startup));
 
@@ -88,8 +74,14 @@ namespace Workly.Api
             services.AddTransient<IAddressManager, AddressManager>();
             services.AddTransient<ISkillManager, SkillManager>();
             services.AddTransient<IAgentSkillManager, AgentSkillManager>();
+            services.AddTransient<INotification, NotificationManager>();
 
-            
+            //SignalR Configuration
+            //I wanna create object of UserIdProvider so like var customId = new UserIdProvider(constructor argument)
+            //then GlobalHost.DependencyResolver.Register(typeof(IUserIdProvider), () => customId);
+            //so I use userId instead of default signlaR connectionId
+            services.AddSignalR();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -100,6 +92,7 @@ namespace Workly.Api
                 app.UseDeveloperExceptionPage();
             }
 
+        
             app.UseCors(options => options.SetIsOriginAllowed(s => _ = true).AllowAnyHeader().AllowAnyMethod().AllowCredentials());
 
             app.UseRouting();
@@ -110,6 +103,7 @@ namespace Workly.Api
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<NotificationSender>("notification");
             });
         }
     }
